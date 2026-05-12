@@ -325,7 +325,15 @@ async function enableNotifications() {
 }
 
 async function installApp() {
-  if (!installPromptEvent) return;
+  if (!installPromptEvent) {
+    alert(
+      "Para instalar la app:\n\n" +
+      "Android/Chrome: toca los 3 puntos y luego 'Agregar a pantalla principal' o 'Instalar app'.\n\n" +
+      "iPhone/Safari: toca Compartir y luego 'Agregar a inicio'.\n\n" +
+      "Debe abrirse desde el enlace HTTPS de GitHub Pages o Firebase Hosting."
+    );
+    return;
+  }
   installPromptEvent.prompt();
   await installPromptEvent.userChoice;
   installPromptEvent = null;
