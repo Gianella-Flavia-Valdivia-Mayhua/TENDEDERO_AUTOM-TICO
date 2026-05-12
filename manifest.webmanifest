@@ -1,0 +1,19 @@
+{
+  "name": "Tendedero Inteligente",
+  "short_name": "Tendedero",
+  "description": "App móvil para monitorear lluvia, sol y estado del tendedero automático.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef7f3",
+  "theme_color": "#0f766e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

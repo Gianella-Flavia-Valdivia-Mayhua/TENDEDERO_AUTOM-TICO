@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1188bf">
+  <title>Mi Tendedero</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p>DOMOTICA IOT</p>
+        <h1>Mi Tendedero</h1>
+      </div>
+      <div class="status-pill" id="connectionText"><span></span> Conectando</div>
+    </header>
+
+    <section class="install-banner" aria-label="Instalacion">
+      <div class="app-icon">▦</div>
+      <div>
+        <button id="installButton" type="button">Instalar como App</button>
+        <p>Funciona sin laptop y guarda la ultima lectura.</p>
+      </div>
+    </section>
+
+    <section class="hero-card" aria-label="Estado principal">
+      <div class="weather-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="cloud cloud-a"></div>
+        <div class="cloud cloud-b"></div>
+        <div class="rain"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+
+      <p class="climate-pill" id="climateText">CLIMA SECO</p>
+      <h2 id="mainTitle">Todo en orden</h2>
+      <p id="mainDetail">Esperando datos del dispositivo.</p>
+
+      <div class="line-status">
+        <span>↔</span>
+        <strong id="positionSummary">Tendedero --</strong>
+      </div>
+    </section>
+
+    <section class="clothes-card" aria-label="Estado de la ropa">
+      <div class="clothes-copy">
+        <span class="section-kicker">ESTADO DE LA ROPA</span>
+        <h2 id="clothesState">Calculando...</h2>
+        <p id="clothesDetail">La app estimara el secado segun lluvia, luz y posicion.</p>
+      </div>
+      <div class="dryness-meter" aria-hidden="true">
+        <span id="drynessBar"></span>
+      </div>
+    </section>
+
+    <section class="drying-card" aria-label="Secado programado">
+      <div>
+        <span class="section-kicker">SECADO PROGRAMADO</span>
+        <h2>Mandar a secar</h2>
+        <p id="dryingCommandText">Elige el estado de la ropa y la app enviara la orden al tendedero.</p>
+      </div>
+      <div class="drying-options">
+        <button type="button" data-drying="CHORREANDO" data-minutes="480">
+          <strong>Chorreando</strong>
+          <span>8 horas</span>
+        </button>
+        <button type="button" data-drying="HUMEDA" data-minutes="180">
+          <strong>Humeda</strong>
+          <span>3 horas</span>
+        </button>
+        <button type="button" data-drying="CENTRIFUGADA" data-minutes="120">
+          <strong>Centrifugada</strong>
+          <span>2 horas</span>
+        </button>
+        <button type="button" data-drying="SEMI_SECA" data-minutes="45">
+          <strong>Semi-seca</strong>
+          <span>45 minutos</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <span>SENSORES EN TIEMPO REAL</span>
+      <strong>LIVE</strong>
+    </section>
+
+    <section class="metrics" aria-label="Sensores">
+      <article>
+        <span>🌧</span>
+        <p>Lluvia FC-37</p>
+        <strong id="rainValue">--</strong>
+      </article>
+      <article>
+        <span>☀</span>
+        <p>Luz LDR</p>
+        <strong id="lightValue">--</strong>
+      </article>
+      <article>
+        <span>↔</span>
+        <p>Posicion</p>
+        <strong id="positionValue">--</strong>
+      </article>
+      <article>
+        <span>☾</span>
+        <p>Modo noche</p>
+        <strong id="nightValue">--</strong>
+      </article>
+    </section>
+
+    <section class="panels">
+      <article class="system-strip">
+        <h3>Sistema</h3>
+        <div><span>IP</span><strong id="ipValue">--</strong></div>
+        <div><span>RSSI</span><strong id="rssiValue">--</strong></div>
+        <div><span>Ultima act.</span><strong id="updatedValue">--</strong></div>
+      </article>
+
+      <article class="history-section">
+        <div class="section-heading">
+          <h3>Historial</h3>
+          <span id="deviceValue">tendedero_01</span>
+        </div>
+        <ol class="history-list" id="historyList">
+          <li>Sin eventos todavia.</li>
+        </ol>
+      </article>
+    </section>
+
+    <div class="actions">
+      <button class="primary" id="notifyButton" type="button">Activar notificaciones</button>
+      <button class="ghost" id="refreshButton" type="button">Actualizar</button>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Navegacion">
+      <a href="#top" class="active">⌂<span>INICIO</span></a>
+      <a href="#historyList">◷<span>HISTORIAL</span></a>
+      <a href="#updatedValue">⚙<span>SISTEMA</span></a>
+    </nav>
+  </main>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
